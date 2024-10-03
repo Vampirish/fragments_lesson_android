@@ -5,10 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.commit
 import com.kehes.fragmentslesson.databinding.FragmentMainBinding
 
-class MainFragment: Fragment() {
+class SecondFragment: Fragment() {
     private lateinit var binding: FragmentMainBinding
 
     override fun onCreateView(
@@ -23,10 +22,6 @@ class MainFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.titleView.setOnClickListener {
-            requireActivity().supportFragmentManager.commit {
-                add(R.id.container, SecondFragment())
-            }
-        }
+        binding.titleView.text = "Hello, I am the second fragment"
     }
 }
