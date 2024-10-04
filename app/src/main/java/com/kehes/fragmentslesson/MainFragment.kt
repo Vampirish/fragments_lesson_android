@@ -24,9 +24,7 @@ class MainFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.titleView.setOnClickListener {
-            requireActivity().supportFragmentManager.commit {
-                add(R.id.container, SecondFragment())
-            }
+            navigate(SecondFragment().javaClass)
         }
     }
 }

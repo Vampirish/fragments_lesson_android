@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.kehes.fragmentslesson.databinding.ActivityMainBinding
 
@@ -19,5 +20,11 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.commit {
             replace(R.id.container, MainFragment())
         }
+    }
+}
+
+fun Fragment.navigate(fragmentClass: Class<Fragment>, bundle: Bundle? = null) {
+    requireActivity().supportFragmentManager.commit {
+        add(R.id.container, fragmentClass, bundle, fragmentClass.name)
     }
 }
