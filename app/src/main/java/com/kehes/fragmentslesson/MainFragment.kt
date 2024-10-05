@@ -8,20 +8,10 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import androidx.navigation.fragment.findNavController
+import com.kehes.fragmentslesson.base.BaseFragment
 import com.kehes.fragmentslesson.databinding.FragmentMainBinding
 
-class MainFragment: Fragment() {
-    private lateinit var binding: FragmentMainBinding
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentMainBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
+class MainFragment: BaseFragment<FragmentMainBinding>(FragmentMainBinding::inflate) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
