@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
+import androidx.navigation.fragment.findNavController
 import com.kehes.fragmentslesson.databinding.FragmentMainBinding
 
 class MainFragment: Fragment() {
@@ -24,7 +25,8 @@ class MainFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.titleView.setOnClickListener {
-            navigate(SecondFragment().javaClass)
+            // navigate(SecondFragment().javaClass)
+            findNavController().navigate(R.id.action_mainFragment_to_secondFragment)
         }
     }
 }

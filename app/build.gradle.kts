@@ -39,7 +39,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -47,6 +46,10 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     //Fragment ext
     implementation ("androidx.fragment:fragment-ktx:1.2.5")
+
+    // Navigation
+    implementation("androidx.navigation:navigation-fragment:2.5.3")
+    implementation("androidx.navigation:navigation-ui:2.5.3")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
