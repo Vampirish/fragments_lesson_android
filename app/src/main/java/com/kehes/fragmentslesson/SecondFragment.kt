@@ -12,9 +12,8 @@ import com.kehes.fragmentslesson.databinding.FragmentMainBinding
 class SecondFragment: BaseFragment<FragmentMainBinding>(FragmentMainBinding::inflate) {
     private val args: SecondFragmentArgs by navArgs()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    override fun onBindView() {
+        super.onBindView()
         binding.titleView.text = args.name
     }
 }

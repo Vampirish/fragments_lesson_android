@@ -12,16 +12,11 @@ import com.kehes.fragmentslesson.base.BaseFragment
 import com.kehes.fragmentslesson.databinding.FragmentMainBinding
 
 class MainFragment: BaseFragment<FragmentMainBinding>(FragmentMainBinding::inflate) {
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    override fun onBindView() {
+        super.onBindView()
         binding.titleView.setOnClickListener {
-            // navigate(SecondFragment().javaClass)
-            findNavController().navigate(MainFragmentDirections.actionMainFragmentToSecondFragment("Hello second fragment"))
+            findNavController().navigate(MainFragmentDirections
+                .actionMainFragmentToSecondFragment("Hello second fragment"))
         }
     }
-}
-
-enum class ArgumentKey {
-    NAME
 }

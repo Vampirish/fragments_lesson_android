@@ -1,6 +1,7 @@
 package com.kehes.fragmentslesson.base
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,6 +23,21 @@ abstract class BaseFragment<VB: ViewBinding>(private val inflate: Inflate<VB>): 
         _binding = inflate(inflater, container, false)
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        try {
+            onInit()
+            onBindView()
+            bindViewModel()
+        } catch (e: Exception) {
+            Log.e("OnViewCreated", "Exception by view binding: ${e.message}")
+        }
+    }
+
+    open fun onInit() { }
+    open fun onBindView() { }
+    open fun bindViewModel() { }
 
     override fun onDestroyView() {
         super.onDestroyView()
