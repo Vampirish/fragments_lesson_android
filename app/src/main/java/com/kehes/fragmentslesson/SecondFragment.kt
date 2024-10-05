@@ -5,10 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.kehes.fragmentslesson.databinding.FragmentMainBinding
 
 class SecondFragment: Fragment() {
     private lateinit var binding: FragmentMainBinding
+    private val args: SecondFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,6 +24,6 @@ class SecondFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.titleView.text = "Hello, I am the second fragment"
+        binding.titleView.text = args.name
     }
 }

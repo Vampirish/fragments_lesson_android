@@ -19,5 +19,9 @@
         android:id="@+id/secondFragment"
         android:name="com.kehes.fragmentslesson.SecondFragment"
         android:label="SecondFragment"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <argument
+            android:name="Name"
+            app:argType="string" />
+    </fragment>
 </navigation>
